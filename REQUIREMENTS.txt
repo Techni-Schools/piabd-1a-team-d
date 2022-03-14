@@ -19,7 +19,7 @@ Będzię się składał z ekranu logowania na któryn będą:
 -przycisk zaloguj
 -w przypadku nie zgodności którejś informacji komunikat o błednym loginie lub haśle
 Moduł zaloguj- wymagania niefunkconalne
--przycisk zaloguj będzie wyszukiwał zgadzające się dane w bazie Logins
+-przycisk zaloguj będzie wyszukiwał zgadzające się dane w bazie Users
 
 Moduł Głowna-wymagania funkcjonalne
 Będzie wyświetłał 5 najnowszych notatek na stronie głownej i ich twórców
