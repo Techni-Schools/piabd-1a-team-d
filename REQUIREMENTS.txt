@@ -21,7 +21,7 @@ Będzię się składał z ekranu logowania na któryn będą:
 Moduł zaloguj- wymagania niefunkconalne
 -przycisk zaloguj będzie wyszukiwał zgadzające się dane w bazie Users
 
-Moduł Głowna-wymagania funkcjonalne
+Moduł Głowna - wymagania funkcjonalne
 Będzie wyświetłał 5 najnowszych notatek na stronie głownej i ich twórców
 Moduł Głowna-wymagania niefunkcjonalne
 -Moduł będzię wyświetłał 5 najnowszych notatek i ich twórców z bazy Notes
@@ -46,8 +46,5 @@ zapisywał ją w bazie Notes
 -moduł będzie obsługiwał 3 użytkowników jednocześnie
 -czas publikacji notatki w wybranej kategorii powinien być mniejszy niż 1min.
 
-Bezpieczństwo i sprawność aplikacji:
--aplikacja będzie używać TSL 1.3
--czas odpowiedzi serwera po kliknięciu opublikuj będzie mniejszy niż 250ms.
 
 
