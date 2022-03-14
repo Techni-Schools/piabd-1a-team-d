@@ -10,7 +10,7 @@ i wysyłającego maila z potwierdzeniem rejestracji.
 -Po potwierdzeniu rejestracji będzie wyświetlał sie komunikat ,, Zarejestrowano pomyślnie"
 Moduł rejestracja-wymagania niefunkcjonalne:
 -czas do wysłania maila weryfikującego nie powinien być większy niż 1min
--bedzie zapisywał login i hasło do bazy Logins
+-bedzie zapisywał login i hasło do bazy Users
 
 Moduł zaloguj- wymagania funkconalne
 Będzię się składał z ekranu logowania na któryn będą:
