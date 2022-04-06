@@ -11,14 +11,12 @@ CREATE TABLE Users (
 )
 
 CREATE TABLE Users_profiles (
-    id INT IDENTITY(1,1),
+    user_id INT IDENTITY(1,1),
     name VARCHAR(25),
     surname VARCHAR(25),
     notes_shared INT,
     avatar_path VARCHAR(100),
-        CONSTRAINT FK_users_profiles_id FOREIGN KEY (id) REFERENCES Users(id)
-        -- proper column name, 
-        -- missing user_id
+        CONSTRAINT FK_users_profiles_id FOREIGN KEY (user_id) REFERENCES Users(id)
 )
 
 CREATE TABLE Subjects (
@@ -40,26 +38,25 @@ CREATE TABLE Notes (
      
 )
 
-CREATE TABLE Schools (
+CREATE TABLE Groups (
     id INT IDENTITY(1,1),
     school_name VARCHAR(80) UNIQUE,
-        CONSTRAINT PK_schools_id PRIMARY KEY(id)
+        CONSTRAINT PK_groups_id PRIMARY KEY(id)
 )
 
--- does not describe what on diagram
-CREATE TABLE Users_Schools (
+CREATE TABLE Users_Groups (
     school_id INT,
     user_id INT,
-        CONSTRAINT FK_users_schools_school_id FOREIGN KEY(school_id) REFERENCES Schools(id),
-        CONSTRAINT FK_users_schools_user_id FOREIGN KEY(user_id) REFERENCES Users(id),
-        CONSTRAINT PK_users_schools_school_id_user_id PRIMARY KEY(school_id, user_id)
+        CONSTRAINT FK_users_groups_school_id FOREIGN KEY(school_id) REFERENCES Groups(id),
+        CONSTRAINT FK_users_groups_user_id FOREIGN KEY(user_id) REFERENCES Users(id),
+        CONSTRAINT PK_users_groups_school_id_user_id PRIMARY KEY(school_id, user_id)
 )
 
-CREATE TABLE Schools_profiles (
+CREATE TABLE Groups_profiles (
     school_id INT,
     name VARCHAR(80),
     addr_1 VARCHAR(100),
     addr_2 VARCHAR(100),
     country_code VARCHAR(2),
-        CONSTRAINT FK_schools_profiles_school_id FOREIGN KEY(school_id) REFERENCES Schools(id)
+        CONSTRAINT FK_groups_profiles_school_id FOREIGN KEY(school_id) REFERENCES Groups(id)
 )
