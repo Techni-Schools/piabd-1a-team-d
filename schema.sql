@@ -53,10 +53,10 @@ CREATE TABLE Users_Groups (
 )
 
 CREATE TABLE Groups_profiles (
-    school_id INT,
+    group_id INT,
     name VARCHAR(80),
     addr_1 VARCHAR(100),
     addr_2 VARCHAR(100),
     country_code VARCHAR(2),
-        CONSTRAINT FK_groups_profiles_school_id FOREIGN KEY(school_id) REFERENCES Groups(id)
+        CONSTRAINT FK_groups_profiles_school_id FOREIGN KEY(group_id) REFERENCES Groups(id)
 )
