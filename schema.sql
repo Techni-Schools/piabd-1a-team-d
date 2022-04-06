@@ -17,6 +17,8 @@ CREATE TABLE Users_profiles (
     notes_shared INT,
     avatar_path VARCHAR(100),
         CONSTRAINT FK_users_profiles_id FOREIGN KEY (id) REFERENCES Users(id)
+        -- proper column name, 
+        -- missing user_id
 )
 
 CREATE TABLE Subjects (
@@ -35,6 +37,7 @@ CREATE TABLE Notes (
         CONSTRAINT FK_notes_user_id FOREIGN KEY(user_id) REFERENCES Users(id),
         CONSTRAINT FK_notes_subject_id FOREIGN KEY(subject_id) REFERENCES Subjects(id),
         CONSTRAINT CHK_notes_shared_date_not_past CHECK (shared_date > GETDATE())
+     
 )
 
 CREATE TABLE Schools (
@@ -43,6 +46,7 @@ CREATE TABLE Schools (
         CONSTRAINT PK_schools_id PRIMARY KEY(id)
 )
 
+-- does not describe what on diagram
 CREATE TABLE Users_Schools (
     school_id INT,
     user_id INT,
