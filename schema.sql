@@ -7,7 +7,7 @@ CREATE TABLE Users (
     email VARCHAR(50) UNIQUE,
     password VARCHAR(63) NOT NULL,
         CONSTRAINT PK_users_id PRIMARY KEY(id),
-        CONSTRAINT CHK_users_email_valid CHECK (email LIKE '%@%.%'),
+        CONSTRAINT CHK_users_email_valid CHECK (email LIKE '%@%.%')
 )
 
 CREATE TABLE Users_profiles (
@@ -40,16 +40,16 @@ CREATE TABLE Notes (
 
 CREATE TABLE Groups (
     id INT IDENTITY(1,1),
-    school_name VARCHAR(80) UNIQUE,
+    group_name VARCHAR(80) UNIQUE,
         CONSTRAINT PK_groups_id PRIMARY KEY(id)
 )
 
 CREATE TABLE Users_Groups (
-    school_id INT,
+    group_id INT,
     user_id INT,
-        CONSTRAINT FK_users_groups_school_id FOREIGN KEY(school_id) REFERENCES Groups(id),
+        CONSTRAINT FK_users_groups_group_id FOREIGN KEY(group_id) REFERENCES Groups(id),
         CONSTRAINT FK_users_groups_user_id FOREIGN KEY(user_id) REFERENCES Users(id),
-        CONSTRAINT PK_users_groups_school_id_user_id PRIMARY KEY(school_id, user_id)
+        CONSTRAINT PK_users_groups_group_id_user_id PRIMARY KEY(group_id, user_id)
 )
 
 CREATE TABLE Groups_profiles (
@@ -58,5 +58,5 @@ CREATE TABLE Groups_profiles (
     addr_1 VARCHAR(100),
     addr_2 VARCHAR(100),
     country_code VARCHAR(2),
-        CONSTRAINT FK_groups_profiles_school_id FOREIGN KEY(group_id) REFERENCES Groups(id)
+        CONSTRAINT FK_groups_profiles_group_id FOREIGN KEY(group_id) REFERENCES Groups(id)
 )
