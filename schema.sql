@@ -1,5 +1,6 @@
 -- DROP DATABASE note_sharing;
 -- CREATE DATABASE note_sharing;
+-- USE note_sharing;
 
 CREATE TABLE Users (
     id INT IDENTITY(1,1),
