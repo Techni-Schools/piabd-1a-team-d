@@ -1,3 +1,4 @@
+-- USE master;
 -- DROP DATABASE note_sharing;
 -- CREATE DATABASE note_sharing;
 -- USE note_sharing;
