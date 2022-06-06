@@ -1,0 +1,45 @@
+version: '3'
+
+volumes:
+  db-data:
+    external: false
+  web-data:
+    external: false
+networks:
+  external:
+  internal:
+services:
+  db:
+    build:
+      context: .
+      target: db
+    container_name: db
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: auth
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    networks:
+      - internal
+    ports:
+      - '3306:3306'
+  web:
+    build:
+      context: .
+      target: web
+    container_name: web
+    volumes:
+      - web-data:/var/www/html
+    ports:
+      - '8080:80'
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: user
+      MYSQL_PASS: pass
+    networks:
+      - external
+      - internal
+    depends_on:
+      - db
