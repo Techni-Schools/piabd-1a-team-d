@@ -1,8 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/resources/.mysqli.php';
 
-$conn->autocommit(false);
-
 $subject_hex = bin2hex($_POST['subject']);
 $subject_query = $conn->query('SELECT * FROM Subjects WHERE name = UNHEX(\'' . $subject_hex . '\')');
 $notes_count = $conn->query('SELECT COUNT(*) FROM Notes')->fetch_array()[0];

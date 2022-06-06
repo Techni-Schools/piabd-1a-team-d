@@ -1,6 +1,5 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/libs/Parsedown.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/resources/.mysqli.php';
 
 echo Parsedown::instance()
     ->setSafeMode(true)
