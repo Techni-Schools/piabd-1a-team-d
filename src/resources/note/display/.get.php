@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php echo 'sqnote ' . $_GET['note_id']?></title>
+    <title><?php echo 'sqnote ' . $_GET['note_id'] ?></title>
 </head>
 <body>
 <?php

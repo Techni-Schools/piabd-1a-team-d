@@ -12,7 +12,7 @@ if ($subject_query->num_rows == 0) {
 
 $note_id = $notes_count + 1;
 $subject_id = $subject_query->fetch_array()['id'];
-$note_path = $_SERVER['DOCUMENT_ROOT'] . '/note/raw/' . $note_id;
+$note_path = $_SERVER['DOCUMENT_ROOT'] . '/note/raw/' . $note_id . '-' . $_POST['name'];
 $note_creation_date = date('Y-m-d H:i:s');
 
 $conn->query('INSERT INTO Notes (id, user_id, subject_id, name, path_to_content, creation_date) VALUES (
