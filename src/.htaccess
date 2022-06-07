@@ -11,5 +11,6 @@ Deny from all
 
 ErrorDocument 403 /resources/http_codes/404.php
 ErrorDocument 404 /resources/http_codes/404.php
+ErrorDocument 405 /resources/http_codes/405.php
 
 Options -Indexes
