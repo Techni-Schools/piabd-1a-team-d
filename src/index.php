@@ -4,6 +4,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/resources/css/reset.css">
+    <link rel="stylesheet" href="/resources/css/style.css">
     <title>sqnote</title>
 </head>
 <body>
