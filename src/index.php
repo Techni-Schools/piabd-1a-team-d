@@ -10,7 +10,6 @@ session_start();
 </head>
 <body>
 <?php
-echo session_id() . '<br>';
 if (isset($_SESSION['username'])) {
     echo "<h2>Hello {$_SESSION['username']}.</h2>";
     echo '<a href=/account/logout>Logout</a><br>';
