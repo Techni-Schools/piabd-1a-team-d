@@ -17,7 +17,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: auth
+      MYSQL_DATABASE: sqnote
       MYSQL_RANDOM_ROOT_PASSWORD: true
       MYSQL_USER: user
       MYSQL_PASSWORD: pass
