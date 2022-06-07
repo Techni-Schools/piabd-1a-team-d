@@ -1,5 +1,13 @@
 <?php
 session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>sqnote</title>
+</head>
+<body>
+<?php
 echo session_id() . '<br>';
 if (isset($_SESSION['username'])) {
     echo "<h2>Hello {$_SESSION['username']}.</h2>";
@@ -10,3 +18,6 @@ if (isset($_SESSION['username'])) {
     echo '<a href=/account/login>Login</a><br>';
     echo '<a href=/account/register>Register</a>';
 }
+?>
+</body>
+</html>
