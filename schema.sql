@@ -41,7 +41,7 @@ CREATE TABLE Notes
 CREATE TABLE `Groups`
 (
     id         INT AUTO_INCREMENT,
-    group_name VARCHAR(80) UNIQUE,
+    name VARCHAR(80) UNIQUE,
     CONSTRAINT PK_groups_id PRIMARY KEY (id)
 );
 
