@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/resources/css/style.css">
     <link rel="stylesheet" href="/resources/css/reset.css">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
 <form action="/account/register" method="post">

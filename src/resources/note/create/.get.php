@@ -12,9 +12,9 @@
 <form action="/note/create" method="post">
     <p>Type in your note:</p>
     <textarea rows="100" cols="175" name="content"></textarea>
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="temat" name="subject">
-    <input type="submit" placeholder="Submit query">
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Subject" name="subject">
+    <input type="submit" placeholder="Submit">
 </form>
 </body>
 </html>
