@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="/resources/css/style.css">
     <link rel="stylesheet" href="/resources/css/reset.css">
+    <link rel="stylesheet" href="/resources/css/index.css">
     <title>sqnote - list notes</title>
 </head>
 <body>
