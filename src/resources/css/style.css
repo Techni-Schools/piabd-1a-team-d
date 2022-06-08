@@ -4,21 +4,24 @@ body {
 }
 
 input[type=email] {
-    width: 100%;
+    text-align: center;
+    width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
 input[type=password] {
-    width: 100%;
+    text-align: center;
+    width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
 input[type=username] {
-    width: 100%;
+    width: 25%;
+    text-align: center;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
