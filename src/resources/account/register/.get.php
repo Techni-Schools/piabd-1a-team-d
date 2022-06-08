@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="/account/register" method="post">
-    <input name="username" placeholder="username" type="text">
+    <input name="username" placeholder="username" type="username">
     <input name="email" placeholder="email" type="email">
     <input name="password" placeholder="password" type="password">
     <input type="submit">
