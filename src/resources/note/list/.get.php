@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>sqnote - list notes</title>
+</head>
+<body>
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/resources/.mysqli.php';
 
@@ -7,3 +13,6 @@ while ($note = $notes->fetch_assoc()) {
     echo '<a href="/note/display?note=' . $note['id'] . '-' . $note['name'] . '">' . $note['name'] . '</a><br>';
 }
 echo '<a href="/">Home</a>';
+?>
+</body>
+</html>
