@@ -11,7 +11,7 @@
 
     $group_id = "'" . $_GET['id'] . "'";
     $group_name = "'" . $_GET['name'] . "'";
-    
+
     $group = $conn->query("SELECT * FROM `Groups` WHERE id = $group_id AND name = $group_name");
 
     if ($group->num_rows == 0)
@@ -32,5 +32,15 @@
     }
     ?>
 </ul>
+<?php
+if ($user_id = $group_owner_id)
+    echo '<form action="/group/edit" method="post">
+    <p>Add user:</p>
+    <input name="username" placeholder="username" type="text">
+    <input name="action_type" type="hidden" value="add_user">
+    <input name="group_id" type="hidden" value="' . $_GET['id'] . '">
+    <input type="submit" placeholder="Add user">
+</form>'
+?>
 </body>
 </html>
