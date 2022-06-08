@@ -1,6 +1,11 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/resources/.mysqli.php';
 
+if (preg_match("/[^-\w]/", $_POST['name'])) {
+    header('Refresh: 3');
+    die('<h1>This note name contains illegal chars</h1>');
+}
+
 $subject_hex = bin2hex($_POST['subject']);
 $subject_query = $conn->query('SELECT * FROM Subjects WHERE name = UNHEX(\'' . $subject_hex . '\')');
 $notes_count = $conn->query('SELECT COUNT(*) FROM Notes')->fetch_array()[0];
@@ -12,7 +17,7 @@ if ($subject_query->num_rows == 0) {
 
 $note_id = $notes_count + 1;
 $subject_id = $subject_query->fetch_array()['id'];
-$note_path = $_SERVER['DOCUMENT_ROOT'] . '/note/raw/' . $note_id;
+$note_path = $_SERVER['DOCUMENT_ROOT'] . '/note/raw/' . $note_id . '-' . $_POST['name'];
 $note_creation_date = date('Y-m-d H:i:s');
 
 $conn->query('INSERT INTO Notes (id, user_id, subject_id, name, path_to_content, creation_date) VALUES (
