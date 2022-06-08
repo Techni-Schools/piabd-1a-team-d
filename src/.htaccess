@@ -9,6 +9,7 @@ Order allow,deny
 Deny from all
 </FilesMatch>
 
+ErrorDocument 400 /resources/http_codes/400.php
 ErrorDocument 403 /resources/http_codes/404.php
 ErrorDocument 404 /resources/http_codes/404.php
 ErrorDocument 405 /resources/http_codes/405.php
