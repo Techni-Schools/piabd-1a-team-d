@@ -15,6 +15,7 @@
     $group_id = "'" . $_GET['id'] . "'";
     $group_name = "'" . $_GET['name'] . "'";
 
+    echo "SELECT * FROM `Groups` WHERE id = $group_id AND name = $group_name";
     $group = $conn->query("SELECT * FROM `Groups` WHERE id = $group_id AND name = $group_name");
 
     if ($group->num_rows == 0)
@@ -24,11 +25,11 @@
         die('<h1 style="text-align: center">This group does not exist</h1>');
     }
 
-    $group_owner_id = $conn->query("SELECT owner_id FROM `Groups` WHERE id = $group_id");
+    $group_owner_id = $conn->query("SELECT owner_id FROM `Groups` WHERE id = $group_id")->fetch_array()['owner_id'];
     $group_users_id = $conn->query("SELECT user_id FROM Users_Groups WHERE group_id = $group_id");
     while ($user_id = $group_users_id->fetch_assoc()['user_id']) {
         $username = $conn->query("SELECT username FROM Users WHERE id = $user_id")->fetch_array()['username'];
-        if ($user_id = $group_owner_id)
+        if ($user_id == $group_owner_id)
             echo "<li><b>Owner: </b>$username</li>";
         else
             echo "<li>$username</li>";

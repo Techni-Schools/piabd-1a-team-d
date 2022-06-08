@@ -1,7 +1,4 @@
 <?php
-
-include $_SERVER['DOCUMENT_ROOT'] . '/resources/http_codes/501.php';
-
 require $_SERVER['DOCUMENT_ROOT'] . '/resources/.mysqli.php';
 
 $group_owner_id = $conn->query("SELECT owner_id FROM `Groups` WHERE id = {$_POST['group_id']}")->fetch_array()['owner_id'];
@@ -20,9 +17,11 @@ if ($_POST['action_type'] == 'add_user') {
         die('<h1 style="text-align: center">User does not exist</h1>');
     }
 
-    $group_id = "'" . $_POST['group_id'] . "'";
-    // TODO: Add query for $user_id
+    $group_id = $_POST['group_id'];
+    $user_id = $conn->query("SELECT id FROM Users WHERE username = $username")->fetch_array()['id'];
 
     $conn->query("INSERT INTO Users_Groups (group_id, user_id) VALUES ($group_id, $user_id)");
     $conn->commit();
+
+    header("Location: /group/view?id=$group_id&name=$group_name");
 }
