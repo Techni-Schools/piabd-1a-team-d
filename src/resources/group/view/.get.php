@@ -14,8 +14,6 @@
 
     $group_id = "'" . $_GET['id'] . "'";
     $group_name = "'" . $_GET['name'] . "'";
-
-    echo "SELECT * FROM `Groups` WHERE id = $group_id AND name = $group_name";
     $group = $conn->query("SELECT * FROM `Groups` WHERE id = $group_id AND name = $group_name");
 
     if ($group->num_rows == 0)
