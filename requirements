@@ -1,0 +1,7 @@
+SQNOTE
+Nasza aplikacja będzie posiadać panel logowania oraz rejestracji.
+Po zalogowaniu będzie przenosić nas do menu głównego, w którym będziemy mogli wybrać poszczególne funkcje - [Logout, Create Note, List Notes, Create Group, List Group]
+W naszej aplikacji będziemy mogli tworzyć notatki, przeglądać wszystkie zapisane notatki dla danego loginu, oraz tworzyć grupy, do których właściciel grup będzie mógł dodawać użytkowników aplikacji.
+Udostępnianie własnych notatek do poszczególnych grup.
+Tematy notatek  - Tagi
+Aplikacja będzie  tworzona w językach - PHP, (hostowane przy użyciu APACHE2)
