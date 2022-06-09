@@ -14,6 +14,7 @@
     <textarea rows="100" cols="175" name="content"></textarea>
     <input type="text" placeholder="Name" name="name">
     <input type="text" placeholder="Subject" name="subject">
+    <input type="text" placeholder="Group (leave empty if none)" name="group_name">
     <input type="submit" placeholder="Submit">
 </form>
 </body>

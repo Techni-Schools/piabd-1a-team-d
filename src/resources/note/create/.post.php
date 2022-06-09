@@ -20,9 +20,19 @@ $subject_id = $subject_query->fetch_array()['id'];
 $note_path = $_SERVER['DOCUMENT_ROOT'] . '/note/raw/' . $note_id . '-' . $_POST['name'];
 $note_creation_date = date('Y-m-d H:i:s');
 
-$conn->query('INSERT INTO Notes (id, user_id, subject_id, name, path_to_content, creation_date) VALUES (
-    \'' . $note_id . '\', \'' . $_SESSION['id'] . '\', \'' . $subject_id . '\', UNHEX(\'' . bin2hex($_POST['name']) . '\'), \''
-    . $note_path . '\', \'' . $note_creation_date . '\')');
+if ($_POST['group_name'] != '') {
+    $group_name = "'" . bin2hex($_POST['group_name']) . "'";
+    $group_id = $conn->query("SELECT id FROM `Groups` WHERE name = UNHEX($group_name)")->fetch_array()['id'];
+}
+
+if (!isset($group_id))
+    $conn->query('INSERT INTO Notes (id, user_id, subject_id, name, path_to_content, creation_date) VALUES (
+        \'' . $note_id . '\', \'' . $_SESSION['id'] . '\', \'' . $subject_id . '\', UNHEX(\'' . bin2hex($_POST['name']) . '\'), \''
+        . $note_path . '\', \'' . $note_creation_date . '\')');
+else
+    $conn->query('INSERT INTO Notes (id, user_id, subject_id, group_id, name, path_to_content, creation_date) VALUES (
+        \'' . $note_id . '\', \'' . $_SESSION['id'] . '\', \'' . $subject_id . '\', \'' . $group_id . '\', UNHEX(\'' . bin2hex($_POST['name']) . '\'), \''
+        . $note_path . '\', \'' . $note_creation_date . '\')');
 
 $note = fopen($note_path, 'w') or die('unable to create file');
 fwrite($note, $_POST['content']);

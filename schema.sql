@@ -25,19 +25,6 @@ CREATE TABLE Subjects
     CONSTRAINT PK_subject_id PRIMARY KEY (id)
 );
 
-CREATE TABLE Notes
-(
-    id              INT AUTO_INCREMENT,
-    user_id         INT,
-    subject_id      INT,
-    name            VARCHAR(50) NOT NULL,
-    path_to_content VARCHAR(200) UNIQUE,
-    creation_date   DATE,
-    CONSTRAINT PK_notes_id PRIMARY KEY (id),
-    CONSTRAINT FK_notes_user_id FOREIGN KEY (user_id) REFERENCES Users (id),
-    CONSTRAINT FK_notes_subject_id FOREIGN KEY (subject_id) REFERENCES Subjects (id)
-);
-
 CREATE TABLE `Groups`
 (
     id       INT AUTO_INCREMENT,
@@ -45,6 +32,21 @@ CREATE TABLE `Groups`
     name     VARCHAR(80) UNIQUE,
     CONSTRAINT PK_groups_id PRIMARY KEY (id),
     CONSTRAINT FK_groups_owner_id FOREIGN KEY (owner_id) REFERENCES Users (id)
+);
+
+CREATE TABLE Notes
+(
+    id              INT AUTO_INCREMENT,
+    user_id         INT,
+    subject_id      INT,
+    group_id        INT,
+    name            VARCHAR(50) NOT NULL,
+    path_to_content VARCHAR(200) UNIQUE,
+    creation_date   DATE,
+    CONSTRAINT PK_notes_id PRIMARY KEY (id),
+    CONSTRAINT FK_notes_user_id FOREIGN KEY (user_id) REFERENCES Users (id),
+    CONSTRAINT FK_notes_subject_id FOREIGN KEY (subject_id) REFERENCES Subjects (id),
+    CONSTRAINT FK_notes_group_id FOREIGN KEY (group_id) REFERENCES `Groups` (id)
 );
 
 CREATE TABLE Users_Groups

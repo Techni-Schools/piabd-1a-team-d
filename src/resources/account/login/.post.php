@@ -14,16 +14,6 @@ if (password_verify($password, $hash)) {
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $hash;
 
-    $user_id = "'" . $_SESSION['id'] . "'";
-    $user_groups_id_query = $conn->query("SELECT group_id FROM Users_Groups WHERE user_id = $user_id");
-
-    $user_groups_id = "";
-    while ($id = $user_groups_id_query->fetch_assoc()['group_id']) {
-        $user_groups_id .= $id . ',';
-    }
-
-    $_SESSION['groups'] = $user_groups_id;
-
     http_response_code(303);
     header('Location: /');
 } else {
