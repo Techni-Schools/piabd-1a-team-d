@@ -13,7 +13,6 @@ CREATE TABLE Users_profiles
     user_id      INT AUTO_INCREMENT,
     name         VARCHAR(25),
     surname      VARCHAR(25),
-    notes_shared INT,
     avatar_path  VARCHAR(100),
     CONSTRAINT FK_users_profiles_id FOREIGN KEY (user_id) REFERENCES Users (id)
 );
