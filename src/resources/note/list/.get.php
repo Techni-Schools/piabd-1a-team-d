@@ -9,6 +9,7 @@
 <body>
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/resources/account/.get_user_groups.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/resources/.mysqli.php';
 
 $query = $conn->query("SELECT * FROM Notes");
 
