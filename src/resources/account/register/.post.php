@@ -27,4 +27,5 @@ $conn->query("INSERT INTO Users (username, email, password) VALUES (UNHEX($usern
 $conn->commit();
 
 http_response_code(303);
-header('Location: /account/login');
+echo 'Registration successful!';
+header('Refresh: 3; url=/account/login');
