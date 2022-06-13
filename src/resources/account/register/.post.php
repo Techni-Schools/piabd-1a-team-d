@@ -26,6 +26,5 @@ if ($conn->query("SELECT * FROM Users WHERE email = UNHEX($email)")->num_rows !=
 $conn->query("INSERT INTO Users (username, email, password) VALUES (UNHEX($username), UNHEX($email), UNHEX($password))");
 $conn->commit();
 
-http_response_code(303);
+header('Refresh: 3; url=/account/login', true, 303);
 echo 'Registration successful!';
-header('Refresh: 3; url=/account/login');
